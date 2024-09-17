@@ -68,6 +68,7 @@ void radar()
 
    while (POSX < MAX && pixy.ccc.getBlocks() == false)
    {
+   
     
      POSX = POSX+ AGG ;
      pixy.setServos(POSX,MED);
@@ -213,12 +214,14 @@ void grilletto(){
 while(posServo<=30 && Cooldown == 1)
   { 
     posServo++;
-    myservo.write(posServo);              
+    myservo.write(posServo);   
+    if(posServo == 30){
+       Cooldown == 0;
+    }
     delay(5);
     }
    
     myservo.write(0);
-    Cooldown = 0;
     delay(1000);
   
 }
